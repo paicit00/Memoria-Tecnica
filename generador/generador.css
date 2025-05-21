@@ -1,0 +1,157 @@
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  color: #2b2b2b;
+  line-height: 1.6;
+}
+
+header {
+  background-color: #fef9f2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+}
+
+header h1 {
+  font-family: 'Brush Script MT', cursive;
+  font-size: 2rem;
+  color: #2a3d3b;
+  margin: 0;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #2b2b2b;
+  font-weight: 500;
+}
+
+.boton-reserva {
+  background-color: #f5cfc0;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #2b2b2b;
+}
+
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #d8e0e3;
+  padding: 3rem 2rem;
+  gap: 2rem;
+  align-items: center;
+}
+
+.hero-images {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1;
+}
+
+.hero-images img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 5px;
+}
+
+.hero-text {
+  max-width: 500px;
+  flex: 1;
+}
+
+.hero-text h2 {
+  font-size: 2rem;
+  color: #2b2b2b;
+}
+
+.hero-text p {
+  margin-top: 1rem;
+}
+
+.hero-text a {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #205a61;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.contenido {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #f6f3ef;
+  padding: 3rem 2rem;
+  gap: 2rem;
+  align-items: center;
+}
+
+.contenido img {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 5px;
+  flex: 1;
+}
+
+.contenido-texto {
+  flex: 2;
+  max-width: 600px;
+}
+
+.contenido-texto h3 {
+  font-size: 1.5rem;
+  color: #2b2b2b;
+}
+
+/* --- ESTILOS RESPONSIVOS PARA MÓVILES --- */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  nav {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-images {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .hero-images img {
+    max-width: 45%;
+  }
+
+  .hero-text a {
+    width: 100%;
+  }
+
+  .contenido {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contenido img {
+    max-width: 80%;
+  }
+}

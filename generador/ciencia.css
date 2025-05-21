@@ -1,0 +1,29 @@
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background: #f0f4ff; color: #fcfbfb; }
+
+header.bienvenida { background-image: url(moon.gif);
+    object-position: center ;text-align: center; 
+    padding: 2rem; border-radius: 0 0 2rem 2rem; 
+    background-size: cover;}
+
+header.bienvenida h1 { color: #426cdf; font-size: 2.5rem; }
+
+header.bienvenida button { background-color: #4f46e5; color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 1rem; font-size: 1rem; cursor: pointer; margin-top: 1rem; }
+
+.info-general { display: flex; flex-direction: column; padding: 1.5rem; gap: 1.5rem; }
+
+.katz-section, .recuerdo { background: rgb(6, 60, 88); padding: 1rem; border-radius: 1rem; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); }
+
+.katz-section h2 { margin-top: 0; color: #3b82f6; }
+
+.recuerdo .gato-habla { font-style: italic; color: #6b7280; }
+
+
+footer { text-align: center; font-size: 0.9rem; padding: 1rem; background: #295572; border-radius: 2rem 2rem 0 0; margin-top: 2rem; }
+
+@media (max-width: 768px) { header.bienvenida h1 { font-size: 2rem; }
+
+.eras, .info-general { margin: 1rem; padding: 1rem; }
+
+.eras h2 { font-size: 1.5rem; }
+
+.eras li { font-size: 0.95rem; } }

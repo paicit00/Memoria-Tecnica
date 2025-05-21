@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Juego de Adivinanzas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            text-align: center;
+            padding: 50px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            max-width: 500px;
+        }
+        input {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-top: 10px;
+            width: 80%;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        .score {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Adivinanza</h2>
+    <div class="score">Puntos: <span id="score">0</span></div>
+    <p id="riddle">Cargando adivinanza...</p>
+    
+    <input type="text" id="answer" placeholder="Escribe tu respuesta aquí">
+    <br>
+    <button onclick="checkAnswer()">Responder</button>
+    
+    <div class="result" id="result"></div>
+</div>
+
+<script>
+    const riddles = [
+        {
+            question: "Blanca por dentro, verde por fuera. Si quieres que te lo diga, espera. ¿Qué es?",
+            answer: "pera"
+        },
+        {
+            question: "Agua pasa por mi casa, cate de mi corazón. ¿Qué es?",
+            answer: "aguacate"
+        },
+        {
+            question: "Oro parece, plata no es. ¿Qué es?",
+            answer: "plátano"
+        }
+    ];
+
+    let currentRiddle = 0;
+    let score = 0;
+
+    function showRiddle() {
+        document.getElementById("riddle").innerText = riddles[currentRiddle].question;
+        document.getElementById("answer").value = "";
+        document.getElementById("result").innerText = "";
+    }
+
+    function updateScore() {
+        document.getElementById("score").innerText = score;
+    }
+
+    function checkAnswer() {
+        const userAnswer = document.getElementById("answer").value.toLowerCase().trim();
+        const correctAnswer = riddles[currentRiddle].answer;
+
+        if (userAnswer === correctAnswer) {
+            document.getElementById("result").innerHTML = "¡Correcto! 🎉";
+            document.getElementById("result").style.color = "green";
+            score += 1;
+            updateScore();
+
+            setTimeout(() => {
+                currentRiddle++;
+                if (currentRiddle < riddles.length) {
+                    showRiddle();
+                } else {
+                    document.getElementById("riddle").innerText = `¡Felicidades! Has completado todas las adivinanzas. Puntaje final: ${score}/${riddles.length}`;
+                    document.getElementById("answer").style.display = "none";
+                    document.querySelector("button").style.display = "none";
+                    document.getElementById("result").innerText = "";
+                }
+            }, 1500);
+
+        } else {
+            document.getElementById("result").innerHTML = "Incorrecto. Intenta de nuevo.";
+            document.getElementById("result").style.color = "red";
+        }
+    }
+
+    // Inicializar
+    showRiddle();
+    updateScore();
+</script>
+
+</body>
+</html>
